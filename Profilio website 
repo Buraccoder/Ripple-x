@@ -1,0 +1,327 @@
+HTML <!DOCTYPE html>
+<html>
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY PROFILIO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header>
+    <p class="p">Welcome to my PROFOLIO</p>
+  
+    <!-- main buttons -->
+    <section class="buttons">
+      <button id="pro">PROFILE</button>
+      <button id="log">BLOG</button>
+      <button id="jects">PROJECTS</button>
+    </section>
+  </header>
+  
+  <hr>
+  
+  <main id="article">
+
+    <!-- BLOG SECTION -->
+    <section id="bologsection">
+      <h1>Welcome to my <strong><em>blog</em></strong> section</h1>
+      <h4>Here is the section where I put my projects I worked on</h4>
+      <hr>
+       <p>My first project to work on was a <em>NOTEPAD APP</em> in it l was using a basic python coding structure which is not scalable, hard to debug and add new features. you can can copy and run it in your <em>mimo Play ground</em>
+     <hr></p>
+     
+    </section>
+
+    <!-- PROJECT SECTION -->
+    <section id="projectsection">
+      <h1>Welcome to my <strong><em>projects</em></strong> section</h1>
+<hr>  
+   <div>
+     <h3>PYTHON PROJECT 1 </h3>
+     <p><span>
+     import json
+
+class NotePad:
+  def __init__(self):
+        self.database = [ ]
+      
+                                  
+        #add new
+  def add (self):
+        new = input("Enter file: ")
+        self.database.append(new)
+        print("Added file: ",new)
+      
+          
+        #remove
+  def remove(self):
+    if not self.database:
+            print("No files found")
+            return     
+    try:      
+        print("****Saved files****")
+        for i,file in enumerate(self.database,start = 1):
+            print(i,"-",file)
+        
+        delete = int(input("Enter to delete: "))
+        if 1 <= delete <= len(self.database):
+            deleted = self.database.pop(delete - 1)
+            print("Deleted", delete)
+    except ValueError:
+            print("invalid input,try again.....")  
+            
+            
+            #veiw files
+  def view(self):
+       if not self.database:
+             print("No files found")
+       else:   
+           print("......Saved files.....") 
+           for i,file in enumerate(self.database,start = 1):
+                 print(i,"-",file)
+            
+    
+    
+      #save 
+  def save(self):
+       if not self.database:
+            print("No files found")
+            return
+       with open("notebase.json","w") as file:
+           json.dump(self.database,file)
+       print("Data saved successfully")
+       
+        #load 
+  def load(self):
+     try:
+       with open("notebase.json","r") as file:
+          loaded = json.load(file)
+          self.database = loaded
+       print("Data loaded successfully")     
+       self.view()      
+             
+     except(FileNotFoundError,EOFError):
+        print("No files found")
+        
+        
+       #exit
+  def exit(self):
+          print("App closed....")
+          quit()
+          
+app = NotePad()
+while True:
+     print("==== NOTEPAD ====")
+     print("Add: a")
+     print("Remove: r")
+     print("Veiw: v")
+     print("load: l")
+     print("Exit: e")
+     
+     start = input("Enter to start: ").lower()
+     if start == "a":
+         app.add()
+     elif start == "r":
+        app.remove()
+     elif start == "l":
+          app.load()
+     elif start == "e":
+         app.save()
+         app.exit()
+     elif start == "v":          
+          app.view()
+     else:
+         print("Invaid input,try again.....")
+    </span>
+     </p>
+     
+   </div>
+   
+    </section>
+
+    <!-- PROFILE SECTION -->
+    <section id="profilesection">
+      <div class="prophoto">
+        <img class="code" src="/WEBSITE_PROFILIO/2b8abd69f09843488fa78e3863d6eb92.jpg" height="150" width="150" alt="">
+      </div>
+      <h2>Welcome to My Creative Playground!</h2>
+      <p class="start">
+        Hi there! My name is <strong><em>JONATHAN</em></strong>, a passionate learner and aspiring Full Stack Developer & Python programmer. This is my personal space where I share the projects I build on Mimo Playground — from coding experiments to full-fledged web apps.
+        Every project here reflects my journey, mistakes, and breakthroughs, and I hope they inspire you in your own learning adventure. Feel free to explore, leave feedback, and connect — your thoughts to fuel and improve my growth!
+      </p>
+      <hr>
+
+      <section class="about">
+        <h2>About Me</h2>
+        <p>I’m Jonathan, a creative developer who loves mixing technology with storytelling.  
+        I build web projects, code in <em>Python</em>, and write manga-inspired scripts that explore human creativity and tech.</p>
+      </section>
+
+      <section class="skills">
+        <h2>My Skills Board</h2>
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Python Programming</li>
+          <li>SQLite Basics</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>My Road Map</h2>
+        <ul>
+          <li>Python programming</li>
+          <li>HTML/CSS/JavaScript</li>
+          <li>SQLite Basics</li>
+          <li>JS/React/Express/</li>
+        </ul>
+      </section>
+
+      <nav>
+        <p><em>Contact me</em></p>
+        <ul>Email 
+          <li>week256@gamil.com</li>
+        </ul>
+    <p>Join me on my social media platforms</p>
+
+        <h4><a href="week@gamil">TikTok</a></h4>
+        <h4><a href="week@gamil">Facebook</a></h4>
+        <h4><a href="week@gamil">Instagram</a></h4>
+      </nav>
+
+      <hr>
+    </section>
+
+  </main>
+  
+  <!-- COMMENTS SECTION -->
+  <footer>
+    <p>Please drop your comments below</p>
+    <button id="submit">Submit</button>
+    
+    <textarea id="textarea" placeholder="please drop your comments" cols="40" rows="8"></textarea>
+    
+    <h6 class="com"><em>comments section</em></h6>
+    
+    <hr>
+    <section id="commentsview"></section>
+    <hr>
+    <h6 class="note"><em>This website is free for educational purposes</em></h6>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+JAVASCRIPT [JS]
+window.onload = function() {
+  // --- BLOG SECTION ---
+  var key = document.getElementById("log");
+  var don = document.getElementById("bologsection");
+
+  // --- PROJECT SECTION ---
+  var cod = document.getElementById("projectsection");
+  var pro = document.getElementById("jects");
+
+  // --- PROFILE SECTION ---
+  var ps = document.getElementById("profilesection");
+  var now = document.getElementById("pro");
+
+  // Function to hide all
+  function hideAll() {
+    don.style.display = "none";
+    cod.style.display = "none";
+    ps.style.display = "none";
+  }
+
+  // Show profile first (default)
+  hideAll();
+  ps.style.display = "block";
+
+  // Button clicks
+  key.onclick = function() {
+    hideAll();
+    don.style.display = "block";
+  };
+
+  pro.onclick = function() {
+    hideAll();
+    cod.style.display = "block";
+  };
+
+  now.onclick = function() {
+    hideAll();
+    ps.style.display = "block";
+  };
+};
+
+// COMMENTS SECTION
+  const submit = document.getElementById("submit");
+  const comments = document.getElementById("commentsview");
+  const textarea = document.getElementById("textarea");
+
+  submit.onclick = function() {
+    if(textarea.value.trim() !== "") {       // optional: prevent empty comments
+      comments.innerHTML += "<p>" + textarea.value + "</p>";
+      textarea.value = "";
+    }
+  };
+
+CSS
+.buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+.code{
+  border-radius: 200px;
+  margin-left: 25%;
+}
+.start{
+  text-align: center;
+}
+/* Make profile section scrollable */
+#profilesection {
+  max-height: 80vh;     /* limits height to 80% of the screen */
+  overflow-y: auto;      /* adds vertical scrolling */
+  padding-right: 10px;   /* small space for scrollbar */
+  scrollbar-width: thin; /* for modern browsers */
+}
+
+/* Optional: style scrollbar for better look */
+.profile::-webkit-scrollbar {
+  width: 8px;
+}
+
+.profile::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.profile::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+#in{
+  
+  margin-bottom: 10px;
+}
+.com{
+  color: gray;
+  margin: 1px;
+}
+/*the bolog section*/
+#bologsection {
+  display: none;
+}
+#projectsection{
+  display : none;
+}
+#profilesection{
+  display: none;
+}
+section {
+  transition: all 0.4s ease;
+}
+span{
+  color : #4150F0;
+  text-align: center;
+}
