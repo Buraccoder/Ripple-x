@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO DO APP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h3>TO DO APP</h3>
+  </header>
+
+<main>
+  <!-- the input task part--->
+  <input id="input" type="text"
+  placeholder="Write task"  
+  >
+  <button id="add">Add task</button>
+  <br>
+  <br>
+  <!-- The task area part-->
+  <section class="tasksArea">
+  <div id="tasks">
+    
+  </div>
+  </section>
+</main>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+JavaScript [js]
+window.onload = function () {
+  //the Add tasks 
+  const add = document.getElementById("add");
+  const input = document.getElementById("input");
+  
+  const tasks = document.getElementById("tasks")
+  
+  add.onclick = function () {
+  const checkbox = document.createElement("input");
+    checkbox.type="checkbox";
+  
+  const label = document.createElement("span");
+  label.textContent = input.value;
+
+  const taskItem = document.createElement("div");
+    taskItem.appendChild(checkbox);
+    taskItem.appendChild(label);
+
+    // Add to tasks area
+    tasks.appendChild(taskItem);
+
+    // Clear input field
+    input.value = "";
+    
+    //delete marked tasks 
+    
+      checkbox.addEventListener
+      ("change" ,function(){
+        if(checkbox.checked){
+        taskItem.remove();
+        }
+      });
+    
+  };
+  
+}
+
+CSS
+h3{
+  display: flex;
+  justify-content: center;
+}
+#input{
+  width:340px;
+  height:30px;
+  border-radius: 10px;
+  border: solid 0.1px black ;
+}
+#add{
+  margin-top: 10px;
+  margin-left: 130px;
+}
+.tasksArea{
+  border: solid 1px #42445A;
+  height: 150px;
+  overflow-y: auto;
+}
